@@ -15,11 +15,14 @@
  */
 /* JS */
 import * as app from './js/app';
+import * as player from './js/player';
 
 import { api } from 'agl-js-api';
 
 /* CSS */
 import './styles/app.scss';
+
+window.player = player;
 
 api.init();
 app.init();

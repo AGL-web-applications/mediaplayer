@@ -1,7 +1,8 @@
 import { load as load_template } from './templates';
+import * as player from './player';
 import Mustache from 'mustache';
 
-import { lowcan } from 'agl-js-api';
+import { mediaplayer } from 'agl-js-api';
 
 var template;
 var page = {
@@ -10,6 +11,7 @@ var page = {
 
 export function show() {
     document.body.innerHTML = Mustache.render(template, page);
+    player.init(document.getElementById('PlayerContainer'));
 }
 
 export function init() {

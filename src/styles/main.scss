@@ -9,6 +9,10 @@ html {
 }
 
 body {
+    .playerContainer {
+        background: rgba(0, 0, 0, 0.5);
+    }
+
     .log {
         display: none;
         position: absolute;
