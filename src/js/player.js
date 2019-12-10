@@ -98,3 +98,13 @@ export function previous() {
 export function next() {
     mediaplayer.next();
 }
+
+export function seek(node, event) {
+    /*
+     * The -15 is to adjust the default margin.
+     */
+    var position = Math.round(page.metadata.track.duration * ((event.pageX-15)/node.clientWidth));
+    mediaplayer.play().then(function() {
+        mediaplayer.seek(position);
+    });
+}
