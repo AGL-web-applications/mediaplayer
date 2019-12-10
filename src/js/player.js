@@ -64,8 +64,12 @@ export function init(node) {
     });
 }
 
-export function play() {
-    mediaplayer.play();
+export function play(trackIndex) {
+    if( trackIndex ) {
+        mediaplayer.pickTrack(trackIndex);
+    } else {
+        mediaplayer.play();
+    }
 }
 
 export function pause() {
