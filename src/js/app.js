@@ -1,5 +1,6 @@
 import { load as load_template } from './templates';
 import * as player from './player';
+import * as playlist from './playlist';
 import Mustache from 'mustache';
 
 import { mediaplayer } from 'agl-js-api';
@@ -12,6 +13,7 @@ var page = {
 export function show() {
     document.body.innerHTML = Mustache.render(template, page);
     player.init(document.getElementById('PlayerContainer'));
+    playlist.init(document.getElementById('PlaylistContainer'));
 }
 
 export function init() {
