@@ -7,6 +7,7 @@ var template;
 var root;
 var page = {
     metadata: {},
+    isLooping: false,
     getPosition: function() {
         if ( this.metadata && this.metadata.position ) {
             return formatTime(this.metadata.position);
@@ -62,6 +63,20 @@ export function init(node) {
     }, function(error) {
         console.error('ERRROR loading main template', error);
     });
+}
+
+export function loop() {
+    if( !page.isLooping ) {
+        mediaplayer.loop('track').then(function() {
+            page.isLooping = true;
+            show();
+        });
+    } else {
+        mediaplayer.loop('playlist').then(function() {
+            page.isLooping = false;
+            show();
+        });
+    }
 }
 
 export function play(trackIndex) {
