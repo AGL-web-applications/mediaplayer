@@ -1,7 +1,9 @@
 <div class="container-fluid">
     <div class="row align-items-center mt-3">
         <div class="col-2 text-left">
-            <button type="button" class="btn btn-light">
+            <button type="button" 
+                class="btn {{ ^isLooping }}btn-outline-secondary{{ /isLooping }} {{ #isLooping }}btn-danger{{ /isLooping }}" 
+                onclick="player.loop();">
                 <i class="fas fa-retweet"></i>
             </button>
         </div>
